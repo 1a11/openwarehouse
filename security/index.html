@@ -1,0 +1,130 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../static/favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    
+    
+    <script>
+      // Initialize the agent at application startup.
+      const fpPromise = import('https://fpjscdn.net/v3/U8dgCdfae5ScYYyYANsE')
+        .then(FingerprintJS => FingerprintJS.load({
+          region: "eu"
+        }).then(fp => {
+          fp.get().then(result => {
+            const visitorId = result.visitorId;
+            document.getElementById('visitorId').value = visitorId;
+          });
+        }));
+      
+    </script>
+
+    <!-- Custom styles for this template -->
+    <link href="../static/index.css" rel="stylesheet">
+    <link href="../static/sidebar.css" rel="stylesheet">
+    <!-- <link href="../static/styles.css" rel="stylesheet"> -->
+    <title>!</title>
+    
+  </head>
+
+  <body>
+    <div class="container-fluid px-0">
+      <div class="row g-0">
+        <div class="col-2">
+          <div class="container-fluid px-0">
+            <div class="row g-0 mb-2">
+              <nav class="navbar navbar-expand-lg bg-light sticky-top ">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="/">
+                    <p style="border:solid; border-width: 1px; padding: 5px; border-radius: 7px; border-color: #c6c6c6;" class="text-center">ЦПГП СпБ</p>
+                  </a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>      
+                </div>
+              </nav>
+            </div>
+            <div class="row g-0 mb-2">
+              <button type="button" class="btn btn-primary btn-sm">ЦПГП РКК</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-10 bg-white">
+          <nav class="navbar navbar-expand-lg bg-light sticky-top underlined mb-2">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <h2>Заголовок категории</h2>
+                </ul>
+                <div class="flex dropdown" >
+                  <a class="navbar-brand" data-bs-toggle="dropdown" href="#" id="imageDropdown">
+                    <img src="./static/default-pfp.svg" width="25" alt="Avatar" class="avatar d-inline-block align-text-top">
+                  </a>
+                    <ul class="dropdown-menu dropdown-menu-end" role="menu" aria-labelledby="imageDropdown">
+                      <li><p class="dropdown-item text-secondary disabled">email@test.kitchen</p></li>
+                      <li><a class="dropdown-item" href="#">Настройки аккаунта</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item link-danger" href="/logout">Выйти</a></li>
+                    </ul>
+                </div>        
+            </div>
+          </nav>
+          <div class="container ">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Open test modal</button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Приём</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div>
+                      <form action="POST" class="form-controller">
+                        <div class="mb-3 form-group required">
+                          <label for="exampleFormControlInput1" class="form-label">Фамилия</label>
+                          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Иванов" required>
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleFormControlInput1" class="form-label">Имя</label>
+                          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Иван" required>
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleFormControlInput1" class="form-label">Отчество</label>
+                          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Иванович" required>
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                      </form>
+                    </div>  
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Send message</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
