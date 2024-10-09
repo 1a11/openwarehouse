@@ -49,7 +49,7 @@ class db():
         self.cursor.execute(REQUEST)
         self.conn.commit()
 
-    def create_table_users(self):
+    def create_table_users_sessions(self):
         REQUEST = """
         CREATE TABLE IF NOT EXISTS users_sessions (
             user_seq_id SERIAL,
@@ -99,6 +99,7 @@ class db():
             else:
                 users_protected[key] = ec.encrypt(data[key]).decode()
         REQUEST = self.craft_insert_request(users_protected, "users_protected")
+        print(REQUEST)
         self.cursor.execute(REQUEST)
         self.conn.commit()
 

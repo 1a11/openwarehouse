@@ -97,7 +97,7 @@ class Auth():
         return token_gen_untrusted in self.token_mapper
     
     def generate_permament_session_id(self, data):
-        user_client_fp = Ec.decrypt(data['browser_fp'])
+        user_client_fp = Ec.decrypt(data['browser_fp'].encode())
         user_uid = self.token_mapper[data['token']]
         self.token_mapper.pop(data['token'])
         session_random_id = self.generate_user_2fa()
