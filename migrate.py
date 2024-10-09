@@ -8,7 +8,7 @@ import qrcode
 
 
 d = dbh.db()
-#d.create_table_users()
+d.create_table_users()
 ec = encdec.EncDec(config.SEED)
 Auth = auth.Auth(d)
 seed = Auth.generate_user_2fa()

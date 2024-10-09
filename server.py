@@ -86,7 +86,8 @@ def login():
             resp = make_response(redirect("/2fa?token=%s&fp=%s" % (auth_resp['token'],auth_resp['browser_fp'].decode())))
             resp.set_cookie("sid","1234")
             resp.set_cookie("token",auth_resp['token'].replace('"',""))
-            resp.set_cookie("fp",auth_resp['browser_fp'])
+            print(auth_resp["browser_fp"], type(auth_resp["browser_fp"]))
+            resp.set_cookie("fp",auth_resp['browser_fp'].decode())
         elif auth_resp["auth"] and not auth_resp["require_2fa"]:
             resp = make_response(redirect("/"))
             resp.set_cookie("sid","123")
