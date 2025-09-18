@@ -7,6 +7,8 @@ import uuid
 import string
 
 seedSalt = os.getenv('HASHING_SALT')
+if seedSalt is None:
+    raise RuntimeError("Environment variable 'HASHING_SALT' is not set. Please set it to a secure value before running this application.")
 
 class EncDec(object):
     def __init__(self, seed=None):
