@@ -6,7 +6,6 @@ import os
 import uuid
 import string
 
-os.environ['HASHING_SALT'] = 'OHNOOMG' #    TODO: CHANGE ME 
 seedSalt = os.getenv('HASHING_SALT')
 
 class EncDec(object):
@@ -65,4 +64,5 @@ class EncDec(object):
                         raise TypeError("Can't decrypt data type %s. Expected Str." % type(record))
             return decrypted
         else:
+
             raise TypeError("Expected data types %s but got %s" % (allowed, type(data)))
