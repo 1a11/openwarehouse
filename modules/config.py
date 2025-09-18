@@ -1,10 +1,11 @@
 import os
 
 #CHANGE BEFORE PUSHING
+# IT IS IMPORTANT TO SET THESE VARIABLES IN YOUR ENVIRONMENT. DO NOT SET THEM IN THIS FILE.
 
-os.environ['SEED'] = "SUPERSECRETSERVERSEED" #    TODO: CHANGE ME 
-os.environ['DB_LOGIN'] = "postgres"
-os.environ['DB_PASSWORD'] = "sudo"
+#os.environ['SEED'] = "SUPERSECRETSERVERSEED" #    TODO: CHANGE ME 
+#os.environ['DB_LOGIN'] = "postgres"
+#os.environ['DB_PASSWORD'] = "sudo"
 
 #CHANGE BEFORE PUSHING
 
@@ -86,4 +87,5 @@ USER_DEBUG_FIELD_MAPPER_PROTECTED = {
         "user_last_browser_fp":"Последний известный опечаток браузера",
         "user_last_ip":"Последний известный IP",
         "user_require_rekey":"Требуется смена пароля"
+
 }
